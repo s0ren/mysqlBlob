@@ -1,5 +1,5 @@
 <?php
-<<<<<<< HEAD
+
     //var_dump($_SERVER);
     
     if ( isset($_SERVER['SERVER_NAME'])) 
@@ -21,12 +21,3 @@
         $dbCon = mysqli_connect($dbHost, $dbUser, $dbPassword, $dbName) 
                 OR die(mysqli_connect_error()); 
     }
-=======
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
->>>>>>> dfc3fe15dc456b6ccfd706d3516d71ad9c55ea7b
