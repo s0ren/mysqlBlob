@@ -1,5 +1,5 @@
 <?php
-    var_dump($_SERVER);
+    //var_dump($_SERVER);
     
     if ( isset($_SERVER['SERVER_NAME'])) 
     {
@@ -12,12 +12,13 @@
         }
         elseif ($_SERVER['SERVER_NAME'] == 'https://hundeprut.herokuapp.com/') 
         {
-            $dbHost = "localhost";
-            $dbUser = "root";
-            $dbPassword = "";
-            $dbName = "blob";
+            $dbHost = "m60mxazb4g6sb4nn.chr7pe7iynqr.eu-west-1.rds.amazonaws.com";
+            $dbUser = "j8k40mipq1w2czqu";
+            $dbPassword = "bfa50wwhim2o6pau";
+            $dbName = "l8ryl26yzasnwqrd";
         }
-        $db = mysqli_connect($dbHost, $dbUser, $dbPassword, $dbName); 
+        $db = mysqli_connect($dbHost, $dbUser, $dbPassword, $dbName) 
+                OR die(mysqli_connect_error()); 
     }
 ?>
 <!DOCTYPE html>
@@ -29,7 +30,8 @@
         $image = addslashes(file_get_contents($_FILES['images']['tmp_name']));
         //you keep your column name setting for insertion. I keep image type Blob.
         $query = "INSERT INTO products (id,image) VALUES('','$image')";  
-        $qry = mysqli_query($db, $query);
+        $qry = mysqli_query($db, $query) 
+                OR die($query . mysqli_error($db));
     }
     
 ?>
