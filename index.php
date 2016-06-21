@@ -1,5 +1,5 @@
 <?php
-    var_dump($_SERVER);
+    //var_dump($_SERVER);
     
     if ( isset($_SERVER['SERVER_NAME'])) 
     {
@@ -12,10 +12,10 @@
         }
         elseif ($_SERVER['SERVER_NAME'] == 'https://hundeprut.herokuapp.com/') 
         {
-            $dbHost = "localhost";
-            $dbUser = "root";
-            $dbPassword = "";
-            $dbName = "blob";
+            $dbHost = "m60mxazb4g6sb4nn.chr7pe7iynqr.eu-west-1.rds.amazonaws.com";
+            $dbUser = "j8k40mipq1w2czqu";
+            $dbPassword = "bfa50wwhim2o6pau";
+            $dbName = "l8ryl26yzasnwqrd";
         }
         $db = mysqli_connect($dbHost, $dbUser, $dbPassword, $dbName); 
     }
