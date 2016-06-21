@@ -1,9 +1,31 @@
+<?php
+    var_dump($_SERVER);
+    
+    if ( isset($_SERVER['SERVER_NAME'])) 
+    {
+        if($_SERVER['SERVER_NAME'] == 'localhost')
+        {
+            $dbHost = "localhost";
+            $dbUser = "root";
+            $dbPassword = "";
+            $dbName = "blob";
+        }
+        elseif ($_SERVER['SERVER_NAME'] == 'https://hundeprut.herokuapp.com/') 
+        {
+            $dbHost = "localhost";
+            $dbUser = "root";
+            $dbPassword = "";
+            $dbName = "blob";
+        }
+        $db = mysqli_connect($dbHost, $dbUser, $dbPassword, $dbName); 
+    }
+?>
 <!DOCTYPE html>
 <?php
 
     if (isset($_POST['submit']))
     {
-        $db = mysqli_connect("localhost","root","","blob"); //keep your db name
+        
         $image = addslashes(file_get_contents($_FILES['images']['tmp_name']));
         //you keep your column name setting for insertion. I keep image type Blob.
         $query = "INSERT INTO products (id,image) VALUES('','$image')";  
