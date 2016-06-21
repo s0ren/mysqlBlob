@@ -1,5 +1,5 @@
 <?php
-    //var_dump($_SERVER);
+    var_dump($_SERVER);
     
     if ( isset($_SERVER['SERVER_NAME'])) 
     {
@@ -10,7 +10,7 @@
             $dbPassword = "";
             $dbName = "blob";
         }
-        elseif ($_SERVER['SERVER_NAME'] == 'https://hundeprut.herokuapp.com/') 
+        elseif ($_SERVER['SERVER_NAME'] == 'hundeprut.herokuapp.com') 
         {
             $dbHost = "m60mxazb4g6sb4nn.chr7pe7iynqr.eu-west-1.rds.amazonaws.com";
             $dbUser = "j8k40mipq1w2czqu";
